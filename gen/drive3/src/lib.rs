@@ -250,6 +250,9 @@
 #[macro_use]
 extern crate serde_derive;
 
+#[macro_use]
+extern crate google_field_selector;
+
 extern crate hyper;
 extern crate serde;
 extern crate serde_json;
@@ -534,6 +537,11 @@ impl Resource for Comment {}
 impl ResponseResult for Comment {}
 
 
+impl FieldSelector for Comment {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// Information about the user, the user's Drive, and system capabilities.
 /// 
 /// # Activities
@@ -587,6 +595,11 @@ pub struct About {
 impl ResponseResult for About {}
 
 
+impl FieldSelector for About {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// Deprecated - use permissionDetails instead.
 /// 
 /// This type is not used in any activity, and only used as *part* of another schema.
@@ -608,6 +621,11 @@ pub struct PermissionTeamDrivePermissionDetails {
 impl NestedType for PermissionTeamDrivePermissionDetails {}
 impl Part for PermissionTeamDrivePermissionDetails {}
 
+
+impl FieldSelector for PermissionTeamDrivePermissionDetails {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// A set of restrictions that apply to this shared drive or items inside this shared drive.
 /// 
@@ -633,6 +651,11 @@ impl NestedType for DriveRestrictions {}
 impl Part for DriveRestrictions {}
 
 
+impl FieldSelector for DriveRestrictions {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// Deprecated - use driveThemes instead.
 /// 
 /// This type is not used in any activity, and only used as *part* of another schema.
@@ -652,6 +675,11 @@ pub struct AboutTeamDriveThemes {
 impl NestedType for AboutTeamDriveThemes {}
 impl Part for AboutTeamDriveThemes {}
 
+
+impl FieldSelector for AboutTeamDriveThemes {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// Capabilities the current user has on this Team Drive.
 /// 
@@ -722,6 +750,11 @@ impl NestedType for TeamDriveCapabilities {}
 impl Part for TeamDriveCapabilities {}
 
 
+impl FieldSelector for TeamDriveCapabilities {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// An image file and cropping parameters from which a background image for this Team Drive is set. This is a write only field; it can only be set on drive.teamdrives.update requests that don't set themeId. When specified, all fields of the backgroundImageFile must be set.
 /// 
 /// This type is not used in any activity, and only used as *part* of another schema.
@@ -744,6 +777,11 @@ impl NestedType for TeamDriveBackgroundImageFile {}
 impl Part for TeamDriveBackgroundImageFile {}
 
 
+impl FieldSelector for TeamDriveBackgroundImageFile {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// Additional metadata about video media. This may not be available immediately upon upload.
 /// 
 /// This type is not used in any activity, and only used as *part* of another schema.
@@ -762,6 +800,11 @@ pub struct FileVideoMediaMetadata {
 impl NestedType for FileVideoMediaMetadata {}
 impl Part for FileVideoMediaMetadata {}
 
+
+impl FieldSelector for FileVideoMediaMetadata {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// A list of changes for a user.
 /// 
@@ -789,6 +832,11 @@ pub struct ChangeList {
 impl ResponseResult for ChangeList {}
 
 
+impl FieldSelector for ChangeList {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// A list of themes that are supported for shared drives.
 /// 
 /// This type is not used in any activity, and only used as *part* of another schema.
@@ -808,6 +856,11 @@ pub struct AboutDriveThemes {
 impl NestedType for AboutDriveThemes {}
 impl Part for AboutDriveThemes {}
 
+
+impl FieldSelector for AboutDriveThemes {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// A list of replies to a comment on a file.
 /// 
@@ -832,6 +885,11 @@ pub struct ReplyList {
 impl ResponseResult for ReplyList {}
 
 
+impl FieldSelector for ReplyList {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// A thumbnail for the file. This will only be used if Google Drive cannot generate a standard thumbnail.
 /// 
 /// This type is not used in any activity, and only used as *part* of another schema.
@@ -848,6 +906,11 @@ pub struct FileContentHintsThumbnail {
 impl NestedType for FileContentHintsThumbnail {}
 impl Part for FileContentHintsThumbnail {}
 
+
+impl FieldSelector for FileContentHintsThumbnail {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// Representation of a shared drive.
 /// 
@@ -900,6 +963,11 @@ impl Resource for Drive {}
 impl ResponseResult for Drive {}
 
 
+impl FieldSelector for Drive {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// A list of shared drives.
 /// 
 /// # Activities
@@ -922,6 +990,11 @@ pub struct DriveList {
 
 impl ResponseResult for DriveList {}
 
+
+impl FieldSelector for DriveList {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// Additional metadata about image media, if available.
 /// 
@@ -990,6 +1063,11 @@ impl NestedType for FileImageMediaMetadata {}
 impl Part for FileImageMediaMetadata {}
 
 
+impl FieldSelector for FileImageMediaMetadata {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// A list of revisions of a file.
 /// 
 /// # Activities
@@ -1012,6 +1090,11 @@ pub struct RevisionList {
 
 impl ResponseResult for RevisionList {}
 
+
+impl FieldSelector for RevisionList {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// A reply to a comment on a file.
 /// 
@@ -1055,6 +1138,11 @@ impl RequestValue for Reply {}
 impl ResponseResult for Reply {}
 
 
+impl FieldSelector for Reply {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// A list of generated file IDs which can be provided in create requests.
 /// 
 /// # Activities
@@ -1077,6 +1165,11 @@ pub struct GeneratedIds {
 impl ResponseResult for GeneratedIds {}
 
 
+impl FieldSelector for GeneratedIds {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// The file content to which the comment refers, typically within the anchor region. For a text file, for example, this would be the text at the location of the comment.
 /// 
 /// This type is not used in any activity, and only used as *part* of another schema.
@@ -1093,6 +1186,11 @@ pub struct CommentQuotedFileContent {
 impl NestedType for CommentQuotedFileContent {}
 impl Part for CommentQuotedFileContent {}
 
+
+impl FieldSelector for CommentQuotedFileContent {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// An notification channel used to watch for resource changes.
 /// 
@@ -1136,6 +1234,11 @@ impl RequestValue for Channel {}
 impl Resource for Channel {}
 impl ResponseResult for Channel {}
 
+
+impl FieldSelector for Channel {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// The metadata for a revision to a file.
 /// 
@@ -1194,6 +1297,11 @@ impl Resource for Revision {}
 impl ResponseResult for Revision {}
 
 
+impl FieldSelector for Revision {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// A list of comments on a file.
 /// 
 /// # Activities
@@ -1217,6 +1325,11 @@ pub struct CommentList {
 impl ResponseResult for CommentList {}
 
 
+impl FieldSelector for CommentList {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// Additional information about the content of the file. These fields are never populated in responses.
 /// 
 /// This type is not used in any activity, and only used as *part* of another schema.
@@ -1233,6 +1346,11 @@ pub struct FileContentHints {
 impl NestedType for FileContentHints {}
 impl Part for FileContentHints {}
 
+
+impl FieldSelector for FileContentHints {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// Capabilities the current user has on this shared drive.
 /// 
@@ -1299,6 +1417,11 @@ pub struct DriveCapabilities {
 impl NestedType for DriveCapabilities {}
 impl Part for DriveCapabilities {}
 
+
+impl FieldSelector for DriveCapabilities {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// A permission for a file. A permission grants a user, group, domain or the world access to a file or a folder hierarchy.
 /// 
@@ -1368,6 +1491,11 @@ impl RequestValue for Permission {}
 impl Resource for Permission {}
 impl ResponseResult for Permission {}
 
+
+impl FieldSelector for Permission {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// Capabilities the current user has on this file. Each capability corresponds to a fine-grained action that a user may take.
 /// 
@@ -1468,6 +1596,11 @@ impl NestedType for FileCapabilities {}
 impl Part for FileCapabilities {}
 
 
+impl FieldSelector for FileCapabilities {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// A set of restrictions that apply to this Team Drive or items inside this Team Drive.
 /// 
 /// This type is not used in any activity, and only used as *part* of another schema.
@@ -1492,6 +1625,11 @@ impl NestedType for TeamDriveRestrictions {}
 impl Part for TeamDriveRestrictions {}
 
 
+impl FieldSelector for TeamDriveRestrictions {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// The user's storage quota limits and usage. All fields are measured in bytes.
 /// 
 /// This type is not used in any activity, and only used as *part* of another schema.
@@ -1513,6 +1651,11 @@ pub struct AboutStorageQuota {
 impl NestedType for AboutStorageQuota {}
 impl Part for AboutStorageQuota {}
 
+
+impl FieldSelector for AboutStorageQuota {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// A list of files.
 /// 
@@ -1540,6 +1683,11 @@ pub struct FileList {
 impl ResponseResult for FileList {}
 
 
+impl FieldSelector for FileList {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// An image file and cropping parameters from which a background image for this shared drive is set. This is a write only field; it can only be set on drive.drives.update requests that don't set themeId. When specified, all fields of the backgroundImageFile must be set.
 /// 
 /// This type is not used in any activity, and only used as *part* of another schema.
@@ -1561,6 +1709,11 @@ pub struct DriveBackgroundImageFile {
 impl NestedType for DriveBackgroundImageFile {}
 impl Part for DriveBackgroundImageFile {}
 
+
+impl FieldSelector for DriveBackgroundImageFile {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// Details of whether the permissions on this shared drive item are inherited or directly on this item. This is an output-only field which is present only for shared drive items.
 /// 
@@ -1590,6 +1743,11 @@ pub struct PermissionPermissionDetails {
 impl NestedType for PermissionPermissionDetails {}
 impl Part for PermissionPermissionDetails {}
 
+
+impl FieldSelector for PermissionPermissionDetails {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// Deprecated: use the drive collection instead.
 /// 
@@ -1636,6 +1794,11 @@ impl Resource for TeamDrive {}
 impl ResponseResult for TeamDrive {}
 
 
+impl FieldSelector for TeamDrive {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// Information about a Drive user.
 /// 
 /// This type is not used in any activity, and only used as *part* of another schema.
@@ -1662,6 +1825,11 @@ pub struct User {
 
 impl Part for User {}
 
+
+impl FieldSelector for User {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// The metadata for a file.
 /// 
@@ -1848,6 +2016,11 @@ impl Resource for File {}
 impl ResponseResult for File {}
 
 
+impl FieldSelector for File {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// Geographic location information stored in the image.
 /// 
 /// This type is not used in any activity, and only used as *part* of another schema.
@@ -1865,6 +2038,11 @@ pub struct FileImageMediaMetadataLocation {
 impl NestedType for FileImageMediaMetadataLocation {}
 impl Part for FileImageMediaMetadataLocation {}
 
+
+impl FieldSelector for FileImageMediaMetadataLocation {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// A list of permissions for a file.
 /// 
@@ -1888,6 +2066,11 @@ pub struct PermissionList {
 
 impl ResponseResult for PermissionList {}
 
+
+impl FieldSelector for PermissionList {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// A list of Team Drives.
 /// 
@@ -1913,6 +2096,11 @@ pub struct TeamDriveList {
 impl ResponseResult for TeamDriveList {}
 
 
+impl FieldSelector for TeamDriveList {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
+
 /// There is no detailed description.
 /// 
 /// # Activities
@@ -1933,6 +2121,11 @@ pub struct StartPageToken {
 
 impl ResponseResult for StartPageToken {}
 
+
+impl FieldSelector for StartPageToken {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 /// A change to a file or shared drive.
 /// 
@@ -1979,6 +2172,11 @@ pub struct Change {
 
 impl Resource for Change {}
 
+
+impl FieldSelector for Change {
+    // The default types specify an empty field selector.
+    fn field_selector_with_ident(_ident: &str, _selector: &mut String) {}
+}
 
 
 // ###################
@@ -3402,7 +3600,17 @@ impl<'a, C, A> FileWatchCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oau
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Channel)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Channel)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -3433,6 +3641,12 @@ impl<'a, C, A> FileWatchCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oau
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         let (json_field_missing, enable_resource_parsing) = {
             let mut enable = true;
             let mut field_present = true;
@@ -3716,7 +3930,10 @@ impl<'a, C, A> FileExportCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oa
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<hyper::client::Response> {
+    pub fn doit<>(mut self: Self) -> Result<hyper::client::Response>
+    where
+        
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -3960,7 +4177,10 @@ impl<'a, C, A> FileDeleteCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oa
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<hyper::client::Response> {
+    pub fn doit<>(mut self: Self) -> Result<hyper::client::Response>
+    where
+        
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -4226,7 +4446,17 @@ impl<'a, C, A> FileCopyCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oaut
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, File)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, File)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -4263,6 +4493,12 @@ impl<'a, C, A> FileCopyCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oaut
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "files/{fileId}/copy";
@@ -4539,7 +4775,10 @@ impl<'a, C, A> FileEmptyTrashCall<'a, C, A> where C: BorrowMut<hyper::Client>, A
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<hyper::client::Response> {
+    pub fn doit<>(mut self: Self) -> Result<hyper::client::Response>
+    where
+        
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -4761,7 +5000,17 @@ impl<'a, C, A> FileListCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oaut
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, FileList)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, FileList)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -4821,6 +5070,12 @@ impl<'a, C, A> FileListCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oaut
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "files";
@@ -5102,7 +5357,17 @@ impl<'a, C, A> FileGenerateIdCall<'a, C, A> where C: BorrowMut<hyper::Client>, A
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, GeneratedIds)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, GeneratedIds)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -5129,6 +5394,12 @@ impl<'a, C, A> FileGenerateIdCall<'a, C, A> where C: BorrowMut<hyper::Client>, A
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "files/generateIds";
@@ -5349,8 +5620,18 @@ impl<'a, C, A> FileCreateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oa
 
 
     /// Perform the operation you have build so far.
-    fn doit<RS>(mut self, mut reader: RS, reader_mime_type: mime::Mime, protocol: &'static str) -> Result<(hyper::client::Response, File)>
-		where RS: ReadSeek {
+    fn doit<RS>(mut self: Self, mut reader: RS,  reader_mime_type: mime::Mime,  protocol: &'static str) -> Result<(hyper::client::Response, File)>
+    where
+        RS: ReadSeek
+    {
+        Self::doit_into(self, reader, reader_mime_type, protocol)
+    }
+
+    fn doit_into<T, RS>(mut self: Self, mut reader: RS,  reader_mime_type: mime::Mime,  protocol: &'static str) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector,
+		RS: ReadSeek
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -5389,6 +5670,12 @@ impl<'a, C, A> FileCreateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oa
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let (mut url, upload_type) =
@@ -5576,9 +5863,19 @@ impl<'a, C, A> FileCreateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oa
     /// * *max size*: 5120GB
     /// * *multipart*: yes
     /// * *valid mime types*: '*/*'
-    pub fn upload<RS>(self, stream: RS, mime_type: mime::Mime) -> Result<(hyper::client::Response, File)>
-                where RS: ReadSeek {
-        self.doit(stream, mime_type, "simple")
+    pub fn upload_into<T, RS>( self: Self,  stream: RS,  mime_type: mime::Mime) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector,
+		RS: ReadSeek
+    {
+        Self::doit_into(self, stream, mime_type, "simple")
+    }
+
+    pub fn upload<RS>( self: Self,  stream: RS,  mime_type: mime::Mime) -> Result<(hyper::client::Response, File)>
+    where
+        RS: ReadSeek
+    {
+        Self::doit(self, stream, mime_type, "simple")
     }
     /// Upload media in a resumable fashion.
     /// Even if the upload fails or is interrupted, it can be resumed for a
@@ -5592,9 +5889,19 @@ impl<'a, C, A> FileCreateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oa
     /// * *max size*: 5120GB
     /// * *multipart*: yes
     /// * *valid mime types*: '*/*'
-    pub fn upload_resumable<RS>(self, resumeable_stream: RS, mime_type: mime::Mime) -> Result<(hyper::client::Response, File)>
-                where RS: ReadSeek {
-        self.doit(resumeable_stream, mime_type, "resumable")
+    pub fn upload_resumable_into<T, RS>( self: Self,  resumeable_stream: RS,  mime_type: mime::Mime) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector,
+		RS: ReadSeek
+    {
+        Self::doit_into(self, resumeable_stream, mime_type, "resumable")
+    }
+
+    pub fn upload_resumable<RS>( self: Self,  resumeable_stream: RS,  mime_type: mime::Mime) -> Result<(hyper::client::Response, File)>
+    where
+        RS: ReadSeek
+    {
+        Self::doit(self, resumeable_stream, mime_type, "resumable")
     }
 
     ///
@@ -5776,8 +6083,18 @@ impl<'a, C, A> FileUpdateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oa
 
 
     /// Perform the operation you have build so far.
-    fn doit<RS>(mut self, mut reader: RS, reader_mime_type: mime::Mime, protocol: &'static str) -> Result<(hyper::client::Response, File)>
-		where RS: ReadSeek {
+    fn doit<RS>(mut self: Self, mut reader: RS,  reader_mime_type: mime::Mime,  protocol: &'static str) -> Result<(hyper::client::Response, File)>
+    where
+        RS: ReadSeek
+    {
+        Self::doit_into(self, reader, reader_mime_type, protocol)
+    }
+
+    fn doit_into<T, RS>(mut self: Self, mut reader: RS,  reader_mime_type: mime::Mime,  protocol: &'static str) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector,
+		RS: ReadSeek
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -5820,6 +6137,12 @@ impl<'a, C, A> FileUpdateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oa
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let (mut url, upload_type) =
@@ -6028,9 +6351,19 @@ impl<'a, C, A> FileUpdateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oa
     /// * *max size*: 5120GB
     /// * *multipart*: yes
     /// * *valid mime types*: '*/*'
-    pub fn upload<RS>(self, stream: RS, mime_type: mime::Mime) -> Result<(hyper::client::Response, File)>
-                where RS: ReadSeek {
-        self.doit(stream, mime_type, "simple")
+    pub fn upload_into<T, RS>( self: Self,  stream: RS,  mime_type: mime::Mime) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector,
+		RS: ReadSeek
+    {
+        Self::doit_into(self, stream, mime_type, "simple")
+    }
+
+    pub fn upload<RS>( self: Self,  stream: RS,  mime_type: mime::Mime) -> Result<(hyper::client::Response, File)>
+    where
+        RS: ReadSeek
+    {
+        Self::doit(self, stream, mime_type, "simple")
     }
     /// Upload media in a resumable fashion.
     /// Even if the upload fails or is interrupted, it can be resumed for a
@@ -6044,9 +6377,19 @@ impl<'a, C, A> FileUpdateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oa
     /// * *max size*: 5120GB
     /// * *multipart*: yes
     /// * *valid mime types*: '*/*'
-    pub fn upload_resumable<RS>(self, resumeable_stream: RS, mime_type: mime::Mime) -> Result<(hyper::client::Response, File)>
-                where RS: ReadSeek {
-        self.doit(resumeable_stream, mime_type, "resumable")
+    pub fn upload_resumable_into<T, RS>( self: Self,  resumeable_stream: RS,  mime_type: mime::Mime) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector,
+		RS: ReadSeek
+    {
+        Self::doit_into(self, resumeable_stream, mime_type, "resumable")
+    }
+
+    pub fn upload_resumable<RS>( self: Self,  resumeable_stream: RS,  mime_type: mime::Mime) -> Result<(hyper::client::Response, File)>
+    where
+        RS: ReadSeek
+    {
+        Self::doit(self, resumeable_stream, mime_type, "resumable")
     }
 
     ///
@@ -6234,7 +6577,17 @@ impl<'a, C, A> FileGetCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oauth
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, File)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, File)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -6265,6 +6618,12 @@ impl<'a, C, A> FileGetCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oauth
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         let (json_field_missing, enable_resource_parsing) = {
             let mut enable = true;
             let mut field_present = true;
@@ -6522,7 +6881,17 @@ impl<'a, C, A> TeamdriveGetCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: 
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, TeamDrive)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, TeamDrive)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -6547,6 +6916,12 @@ impl<'a, C, A> TeamdriveGetCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: 
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "teamdrives/{teamDriveId}";
@@ -6779,7 +7154,17 @@ impl<'a, C, A> TeamdriveCreateCall<'a, C, A> where C: BorrowMut<hyper::Client>, 
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, TeamDrive)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, TeamDrive)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -6801,6 +7186,12 @@ impl<'a, C, A> TeamdriveCreateCall<'a, C, A> where C: BorrowMut<hyper::Client>, 
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "teamdrives";
@@ -7029,7 +7420,17 @@ impl<'a, C, A> TeamdriveListCall<'a, C, A> where C: BorrowMut<hyper::Client>, A:
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, TeamDriveList)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, TeamDriveList)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -7062,6 +7463,12 @@ impl<'a, C, A> TeamdriveListCall<'a, C, A> where C: BorrowMut<hyper::Client>, A:
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "teamdrives";
@@ -7277,7 +7684,10 @@ impl<'a, C, A> TeamdriveDeleteCall<'a, C, A> where C: BorrowMut<hyper::Client>, 
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<hyper::client::Response> {
+    pub fn doit<>(mut self: Self) -> Result<hyper::client::Response>
+    where
+        
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -7515,7 +7925,17 @@ impl<'a, C, A> TeamdriveUpdateCall<'a, C, A> where C: BorrowMut<hyper::Client>, 
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, TeamDrive)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, TeamDrive)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -7540,6 +7960,12 @@ impl<'a, C, A> TeamdriveUpdateCall<'a, C, A> where C: BorrowMut<hyper::Client>, 
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "teamdrives/{teamDriveId}";
@@ -7796,7 +8222,17 @@ impl<'a, C, A> DriveCreateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Drive)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Drive)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -7818,6 +8254,12 @@ impl<'a, C, A> DriveCreateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "drives";
@@ -8048,7 +8490,17 @@ impl<'a, C, A> DriveUpdateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Drive)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Drive)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -8073,6 +8525,12 @@ impl<'a, C, A> DriveUpdateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "drives/{driveId}";
@@ -8322,7 +8780,17 @@ impl<'a, C, A> DriveUnhideCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Drive)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Drive)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -8344,6 +8812,12 @@ impl<'a, C, A> DriveUnhideCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "drives/{driveId}/unhide";
@@ -8562,7 +9036,10 @@ impl<'a, C, A> DriveDeleteCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<hyper::client::Response> {
+    pub fn doit<>(mut self: Self) -> Result<hyper::client::Response>
+    where
+        
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -8798,7 +9275,17 @@ impl<'a, C, A> DriveListCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oau
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, DriveList)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, DriveList)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -8831,6 +9318,12 @@ impl<'a, C, A> DriveListCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oau
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "drives";
@@ -9048,7 +9541,17 @@ impl<'a, C, A> DriveGetCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oaut
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Drive)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Drive)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -9073,6 +9576,12 @@ impl<'a, C, A> DriveGetCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oaut
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "drives/{driveId}";
@@ -9298,7 +9807,17 @@ impl<'a, C, A> DriveHideCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oau
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Drive)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Drive)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -9320,6 +9839,12 @@ impl<'a, C, A> DriveHideCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oau
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "drives/{driveId}/hide";
@@ -9539,7 +10064,10 @@ impl<'a, C, A> CommentDeleteCall<'a, C, A> where C: BorrowMut<hyper::Client>, A:
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<hyper::client::Response> {
+    pub fn doit<>(mut self: Self) -> Result<hyper::client::Response>
+    where
+        
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -9782,7 +10310,17 @@ impl<'a, C, A> CommentGetCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oa
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Comment)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Comment)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -9808,6 +10346,12 @@ impl<'a, C, A> CommentGetCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oa
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "files/{fileId}/comments/{commentId}";
@@ -10051,7 +10595,17 @@ impl<'a, C, A> CommentUpdateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A:
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Comment)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Comment)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -10074,6 +10628,12 @@ impl<'a, C, A> CommentUpdateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A:
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "files/{fileId}/comments/{commentId}";
@@ -10333,7 +10893,17 @@ impl<'a, C, A> CommentCreateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A:
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Comment)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Comment)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -10355,6 +10925,12 @@ impl<'a, C, A> CommentCreateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A:
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "files/{fileId}/comments";
@@ -10605,7 +11181,17 @@ impl<'a, C, A> CommentListCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, CommentList)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, CommentList)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -10639,6 +11225,12 @@ impl<'a, C, A> CommentListCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "files/{fileId}/comments";
@@ -10891,7 +11483,10 @@ impl<'a, C, A> ChannelStopCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<hyper::client::Response> {
+    pub fn doit<>(mut self: Self) -> Result<hyper::client::Response>
+    where
+        
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -11120,7 +11715,17 @@ impl<'a, C, A> ReplyCreateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Reply)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Reply)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -11143,6 +11748,12 @@ impl<'a, C, A> ReplyCreateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "files/{fileId}/comments/{commentId}/replies";
@@ -11402,7 +12013,17 @@ impl<'a, C, A> ReplyListCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oau
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, ReplyList)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, ReplyList)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -11434,6 +12055,12 @@ impl<'a, C, A> ReplyListCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oau
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "files/{fileId}/comments/{commentId}/replies";
@@ -11687,7 +12314,17 @@ impl<'a, C, A> ReplyGetCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oaut
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Reply)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Reply)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -11714,6 +12351,12 @@ impl<'a, C, A> ReplyGetCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oaut
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "files/{fileId}/comments/{commentId}/replies/{replyId}";
@@ -11961,7 +12604,10 @@ impl<'a, C, A> ReplyDeleteCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<hyper::client::Response> {
+    pub fn doit<>(mut self: Self) -> Result<hyper::client::Response>
+    where
+        
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -12221,7 +12867,17 @@ impl<'a, C, A> ReplyUpdateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Reply)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Reply)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -12245,6 +12901,12 @@ impl<'a, C, A> ReplyUpdateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "files/{fileId}/comments/{commentId}/replies/{replyId}";
@@ -12506,7 +13168,17 @@ impl<'a, C, A> AboutGetCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oaut
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, About)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, About)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -12527,6 +13199,12 @@ impl<'a, C, A> AboutGetCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oaut
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "about";
@@ -12721,7 +13399,10 @@ impl<'a, C, A> PermissionDeleteCall<'a, C, A> where C: BorrowMut<hyper::Client>,
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<hyper::client::Response> {
+    pub fn doit<>(mut self: Self) -> Result<hyper::client::Response>
+    where
+        
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -13009,7 +13690,17 @@ impl<'a, C, A> PermissionUpdateCall<'a, C, A> where C: BorrowMut<hyper::Client>,
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Permission)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Permission)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -13047,6 +13738,12 @@ impl<'a, C, A> PermissionUpdateCall<'a, C, A> where C: BorrowMut<hyper::Client>,
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "files/{fileId}/permissions/{permissionId}";
@@ -13344,7 +14041,17 @@ impl<'a, C, A> PermissionListCall<'a, C, A> where C: BorrowMut<hyper::Client>, A
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, PermissionList)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, PermissionList)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -13381,6 +14088,12 @@ impl<'a, C, A> PermissionListCall<'a, C, A> where C: BorrowMut<hyper::Client>, A
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "files/{fileId}/permissions";
@@ -13641,7 +14354,17 @@ impl<'a, C, A> PermissionGetCall<'a, C, A> where C: BorrowMut<hyper::Client>, A:
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Permission)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Permission)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -13673,6 +14396,12 @@ impl<'a, C, A> PermissionGetCall<'a, C, A> where C: BorrowMut<hyper::Client>, A:
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "files/{fileId}/permissions/{permissionId}";
@@ -13941,7 +14670,17 @@ impl<'a, C, A> PermissionCreateCall<'a, C, A> where C: BorrowMut<hyper::Client>,
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Permission)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Permission)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -13981,6 +14720,12 @@ impl<'a, C, A> PermissionCreateCall<'a, C, A> where C: BorrowMut<hyper::Client>,
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "files/{fileId}/permissions";
@@ -14287,7 +15032,17 @@ impl<'a, C, A> ChangeListCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oa
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, ChangeList)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, ChangeList)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -14342,6 +15097,12 @@ impl<'a, C, A> ChangeListCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: oa
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "changes";
@@ -14623,7 +15384,17 @@ impl<'a, C, A> ChangeGetStartPageTokenCall<'a, C, A> where C: BorrowMut<hyper::C
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, StartPageToken)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, StartPageToken)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -14656,6 +15427,12 @@ impl<'a, C, A> ChangeGetStartPageTokenCall<'a, C, A> where C: BorrowMut<hyper::C
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "changes/startPageToken";
@@ -14900,7 +15677,17 @@ impl<'a, C, A> ChangeWatchCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Channel)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Channel)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -14955,6 +15742,12 @@ impl<'a, C, A> ChangeWatchCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "changes/watch";
@@ -15261,7 +16054,17 @@ impl<'a, C, A> RevisionUpdateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Revision)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Revision)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -15284,6 +16087,12 @@ impl<'a, C, A> RevisionUpdateCall<'a, C, A> where C: BorrowMut<hyper::Client>, A
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "files/{fileId}/revisions/{revisionId}";
@@ -15544,7 +16353,17 @@ impl<'a, C, A> RevisionGetCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, Revision)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, Revision)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -15570,6 +16389,12 @@ impl<'a, C, A> RevisionGetCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: o
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         let (json_field_missing, enable_resource_parsing) = {
             let mut enable = true;
             let mut field_present = true;
@@ -15822,7 +16647,10 @@ impl<'a, C, A> RevisionDeleteCall<'a, C, A> where C: BorrowMut<hyper::Client>, A
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<hyper::client::Response> {
+    pub fn doit<>(mut self: Self) -> Result<hyper::client::Response>
+    where
+        
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -16066,7 +16894,17 @@ impl<'a, C, A> RevisionListCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: 
 
 
     /// Perform the operation you have build so far.
-    pub fn doit(mut self) -> Result<(hyper::client::Response, RevisionList)> {
+    pub fn doit<>(mut self: Self) -> Result<(hyper::client::Response, RevisionList)>
+    where
+        
+    {
+        Self::doit_into(self)
+    }
+
+    pub fn doit_into<T>(mut self: Self) -> Result<(hyper::client::Response, T)>
+    where
+        T: Default + serde::de::DeserializeOwned + FieldSelector
+    {
         use std::io::{Read, Seek};
         use hyper::header::{ContentType, ContentLength, Authorization, Bearer, UserAgent, Location};
         let mut dd = DefaultDelegate;
@@ -16094,6 +16932,12 @@ impl<'a, C, A> RevisionListCall<'a, C, A> where C: BorrowMut<hyper::Client>, A: 
             params.push((&name, value.clone()));
         }
 
+        if !params.iter().any(|&(ref k, ref _v)| *k == "fields") {
+	    let fields = T::field_selector();
+	    if !fields.is_empty() {
+	        params.push(("fields", T::field_selector()));
+	    }
+        }
         params.push(("alt", "json".to_string()));
 
         let mut url = self.hub._base_url.clone() + "files/{fileId}/revisions";
